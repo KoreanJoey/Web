@@ -7,16 +7,57 @@
         font-size: 50px;
         text-align: center;
     }
+
+    .name{
+        font-weight: bold;
+        color: darkcyan;
+    }
+
+    #lover{
+        font-weight: normal;
+        color: pink;
+    }
+
 </style>
 </head>
 <body>
-<h1>Sydney Real Estate Survey</h1>
+<h1 style="background-color: darkblue; color: beige;">Sydney Real Estate Survey</h1>
 <input type="button" value="apartment" onclick="alert('apartment')">
 <input type="button" value="house" onclick="alert('house')">
 <input type="text">
-<input type="text" value="id" onkeydown="alert('id saved!')">
+<input type="text" value="id" onkeydown="alert(' saved!')">
+
+<p>
+    My name is <span class="name">Seongah Cho</span>.<br>
+    His name is <sapn class="name">John</sapn>.<br>
+    I love <span id="lover" class="name">Kinu</span>.<br>
+    What are you doing <span class="name">Kirill</span>?
+</p>
+
+<input type="text" id="name" value="name">
+<input type="button" value="save" onclick="document.querySelector('#saved').innerHTML = 'saved my name';">
+<input type="button" value="Name" onclick="getName()">
+<!--<input type="button" value="cancel" onclick="clear()">-->
+<button onclick="clearName()">clear</button>
+<button onclick="clearAll()">Clear All</button>
+
+<p id="saved"></p>
+<p id="yourName"></p>
 <script>
-    document.write(1+3);
+    function getName(){
+        var name = document.getElementById("name").value;
+        document.getElementById("yourName").innerHTML = name;
+    }
+
+    function clearName(){
+        document.getElementById("yourName").innerHTML = "";
+    }
+
+    function clearAll(){
+        document.getElementById("yourName").innerHTML = "";
+        document.getElementById("saved").innerHTML = "";
+    }
+    
 </script>
 </body>
 </html>
